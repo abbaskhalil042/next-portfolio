@@ -1,4 +1,5 @@
 import Hero from "./components/Hero";
+import Projects from "./components/Projects";
 import Sidebar from "./components/Sidebar";
 
 const page = () => {
@@ -7,8 +8,9 @@ const page = () => {
       <div className="w-1/6 text-white h-screen ">
         <Sidebar />
       </div>
-      <div className="w-5/6 bg-blue-500 h-screen">
+      <div className="w-5/6  h-screen">
         <Hero />
+        <Projects/>
       </div>
     </main>
   );
