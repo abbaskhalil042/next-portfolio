@@ -5,6 +5,7 @@ import React from "react";
 import { FlipWords } from "./flip-words";
 import Link from "next/link";
 import { HoverBorderGradient } from "./hover-border-gradient";
+import { Vortex } from "../ui/vortex";
 
 const transition = {
   duration: 0,
@@ -30,16 +31,18 @@ export const GoogleGeminiEffect = ({
     "modern",
   ];
   return (
-    <div className={cn("sticky top-5", className)}>
-      <p className="text-lg md:text-7xl font-normal pb-4 text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-300">
-        {/* {title || `Build  ${<><FlipWords words={words} /> <br /></>}`} */}
-        Build
-        <FlipWords words={words} /> <br />
-      </p>
-      <p className="text-xs md:text-xl font-normal text-center text-neutral-400  max-w-lg mx-auto">
-        {description ||
-          `  "Craft dynamic websites and Android apps using cutting-edge tech and innovative design for seamless, user-centric experiences."`}
-      </p>
+    <div className={cn("sticky top-40", className)}>
+      <Vortex>
+        <p className="text-lg md:text-7xl font-normal pb-4 text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-300">
+      
+          <span className="border-b-2 border-b-blue-500"> Build</span>
+          <FlipWords words={words} /> <br />
+        </p>
+        <p className="text-xs md:text-xl font-normal text-center text-neutral-400  max-w-lg mx-auto">
+          {description ||
+            `  "Craft dynamic websites and Android apps using cutting-edge tech and innovative design for seamless, user-centric experiences."`}
+        </p>
+      </Vortex>
       <div className="w-full h-[890px] -top-60 md:-top-40  flex items-center justify-center bg-red-transparent absolute ">
         <Link
           href={"https://github.com/abbaskhalil042"}

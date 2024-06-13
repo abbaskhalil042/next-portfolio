@@ -14,7 +14,7 @@ import {
 import Image from "next/image";
 const Sidebar = () => {
   return (
-    <div className=" main border-r fixed border-rose-400 h-screen">
+    <div className=" main border-r fixed left-0  sm: border-rose-400 sm:border-none h-screen">
       <div className="flex items-center ">
         <div className="flex items-center">
           <img
