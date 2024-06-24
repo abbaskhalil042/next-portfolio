@@ -1,6 +1,7 @@
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
 import Sidebar from "./components/Sidebar";
+import Skills from "./components/Skills";
 
 const page = () => {
   return (
@@ -10,7 +11,8 @@ const page = () => {
       </div>
       <div className=" w-5/6  h-screen">
         <Hero />
-        <Projects/>
+        <Projects />
+        <Skills/>
       </div>
     </main>
   );
