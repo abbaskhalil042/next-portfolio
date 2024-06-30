@@ -16,73 +16,59 @@ import nodejs from "../../../public/skillsIcons/node-js.png";
 import mongodb from "../../../public/skillsIcons/mongo.png";
 import typescript from "../../../public/skillsIcons/typescript.png";
 import git from "../../../public/skillsIcons/social.png";
-
-export const projects = [
-  {
-    name: "HTML",
-    url: "https://www.w3.org/html/",
-    image: html,
-  },
-  {
-    name: "CSS",
-    url: "https://www.w3.org/Style/CSS/",
-    image: css,
-  },
-  {
-    name: "JavaScript",
-    url: "https://www.javascript.com/",
-    image: js,
-  },
-  {
-    name: "React",
-    url: "https://reactjs.org/",
-    image: react,
-  },
-  {
-    name: "Next.js",
-    url: "https://nextjs.org/",
-    image: nextjs,
-  },
-  {
-    name: "Node.js",
-    url: "https://nodejs.org/en/",
-    image: nodejs,
-  },
-  {
-    name: "MongoDB",
-    url: "https://www.mongodb.com/",
-    image: mongodb,
-  },
-
-  {
-    name: "Tailwind",
-    url: "https://tailwindcss.com/",
-    image: tailwind,
-  },
-  {
-    name: "Typescript",
-    url: "https://www.typescriptlang.org/",
-    image: typescript,
-  },
-  {
-    name: "Git",
-    url: "https://git-scm.com/",
-    image: git,
-  },
-  {
-    name: "Github",
-    url: "https://github.com/",
-    image: github,
-  },
-
-];
-
+import { Sparkle } from "./sparkle";
+import React, { useEffect, useState } from "react";
+import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
+// import { InfiniteMovingCards } from "@../ui/infinite-moving-cards";
 function Skills() {
   return (
-    <div className="max-w-5xl mx-auto px-8">
-      <HoverEffect className="" items={projects} />
-    </div>
+    <>
+      <div className="mt-20">
+      <Sparkle Title="Skills" />
+      </div>
+
+      <div className="h-[40rem] rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+        <InfiniteMovingCards items={projects} direction="right" speed="normal" />
+      </div>
+    </>
   );
 }
 
 export default Skills;
+
+export const projects = [
+  {
+    image: html,
+  },
+  {
+    image: css,
+  },
+  {
+    image: js,
+  },
+  {
+    image: react,
+  },
+  {
+    image: nextjs,
+  },
+  {
+    image: nodejs,
+  },
+  {
+    image: mongodb,
+  },
+
+  {
+    image: tailwind,
+  },
+  {
+    image: typescript,
+  },
+  {
+    image: git,
+  },
+  {
+    image: github,
+  },
+];

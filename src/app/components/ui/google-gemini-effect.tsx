@@ -6,6 +6,8 @@ import { FlipWords } from "./flip-words";
 import Link from "next/link";
 import { HoverBorderGradient } from "./hover-border-gradient";
 import { Vortex } from "../ui/vortex";
+import Image from "next/image";
+import portfolio from "../../../../public/portfolioLogo.jpg";
 
 const transition = {
   duration: 0,
@@ -34,7 +36,6 @@ export const GoogleGeminiEffect = ({
     <div className={cn("sticky top-40", className)}>
       <Vortex>
         <p className="text-lg md:text-7xl font-normal pb-4 text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-300">
-      
           <span className="border-b-2 border-b-blue-500"> Build</span>
           <FlipWords words={words} /> <br />
         </p>
@@ -51,10 +52,13 @@ export const GoogleGeminiEffect = ({
           <HoverBorderGradient
             containerClassName="rounded-full"
             as="button"
-            className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
+            className="dark:bg-black  bg-white h-[10rem] text-black dark:text-white flex flex-col items-center space-x-2"
           >
             {/* <AceternityLogo /> */}
-            Hire me
+            <div>
+              <Image src={portfolio} width={90} height={120} alt="" />
+            </div>
+            <div>Hire me</div>
           </HoverBorderGradient>
         </Link>
       </div>

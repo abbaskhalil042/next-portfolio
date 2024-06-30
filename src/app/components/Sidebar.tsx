@@ -14,10 +14,10 @@ import {
 import Image from "next/image";
 const Sidebar = () => {
   return (
-    <div className=" main border-r fixed left-0  sm: border-rose-400 sm:border-none h-screen">
+    <div className=" main border-r fixed left-0 h-screen">
       <div className="flex items-center ">
         <div className="flex items-center">
-          <img
+          <Image
             className="h-[7rem] mx-auto object-cover rounded-full w-[6.6rem] ml-0"
             src="/portfolioLogo.jpg"
             alt=""

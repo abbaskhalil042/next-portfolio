@@ -20,32 +20,26 @@ function Hero() {
 
   return (
     <>
-
-    <div className="main ">
-      <div className="flex flex-row-reverse bottom-auto w-5/6 fixed top-0  z-10 ">
+      <div className="main ">
+        {/* <div className="flex flex-row-reverse bottom-auto w-5/6 fixed top-0  z-10 ">
         <Link href={"/"} className="bg-white text-black px-6 py-2 rounded-3xl m-3 ">Resume</Link>
+      </div> */}
+
+        <div
+          className=" h-[300vh] bg-black  dark:border dark:border-white/[0.1] rounded-md relative pt-40 overflow-clip"
+          ref={ref}
+        >
+          <GoogleGeminiEffect
+            pathLengths={[
+              pathLengthFirst,
+              pathLengthSecond,
+              pathLengthThird,
+              pathLengthFourth,
+              pathLengthFifth,
+            ]}
+          />
+        </div>
       </div>
-
-
-    <div
-
-        className="mt-16 h-[300vh] bg-black  dark:border dark:border-white/[0.1] rounded-md relative pt-40 overflow-clip"
-        ref={ref}
-      >
-      
-        <GoogleGeminiEffect
-          pathLengths={[
-            pathLengthFirst,
-            pathLengthSecond,
-            pathLengthThird,
-            pathLengthFourth,
-            pathLengthFifth,
-          ]}
-        />
-      </div>
-
-    </div>
-     
     </>
   );
 }
