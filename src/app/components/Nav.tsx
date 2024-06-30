@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import { cn } from "../utils/cn";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "./ui/navbar-menu";
 import Link from "next/link";
+import { HoverBorderGradient } from "./ui/hover-border-gradient";
+import Image from "next/image";
 // import { cn } from "@app/utils/cn";
 
 export function NavbarDemo() {
@@ -18,23 +20,38 @@ function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
   return (
     <div
-      className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}
+      className={cn(
+        "fixed top-10 flex justify-center items-center  inset-x-0 max-w-2xl mx-auto z-50",
+        className
+      )}
     >
       <Menu setActive={setActive}>
-        <MenuItem setActive={setActive} active={active} item="Services" />
+        <div className="flex  justify-center items-center gap-6">
+          <MenuItem className="" setActive={setActive} active={active} item="Services" />
 
-        <MenuItem setActive={setActive} active={active} item="Products" />
+          <MenuItem  className="" setActive={setActive} active={active} item="Products" />
+        </div>
 
-        <Link
-          href={"/"}
-          className=" text-black bg-slate-800 px-6 py-2 rounded-3xl m-3 "
-        >
-          <MenuItem setActive={setActive} active={active} item="Rsume" />
-        </Link>
+        <div className="flex justify-center items-center text-black">
+          <HoverBorderGradient
+            containerClassName=""
+            as="button"
+            className="dark:bg-black  text-black dark:text-white flex flex-col items-center space-x-2"
+          >
+            <Link
+              href={"/"}
+              className=" text-black bg-slate-400 px-6 py-2 rounded-3xl m-3 "
+            >
+              <MenuItem className="text-black" setActive={setActive} active={active} item="Rsume" />
+            </Link>
+          </HoverBorderGradient>
+        </div>
 
-        <MenuItem setActive={setActive} active={active} item="Company" />
+        <div className="flex justify-center items-center gap-6">
+          <MenuItem className="" setActive={setActive} active={active} item="Company" />
 
-        <MenuItem setActive={setActive} active={active} item="Pricing" />
+          <MenuItem className="" setActive={setActive} active={active} item="Pricing" />
+        </div>
       </Menu>
     </div>
   );

@@ -9,7 +9,7 @@ import { Sparkle } from "./sparkle";
  function HowIWorked() {
   return (
     <>
-    <div>
+    <div className="mt-20">
         <Sparkle Title="How I Worked" />
     </div>
       <div className=" flex flex-col lg:flex-row items-center justify-center bg-white dark:bg-black w-full gap-4 mx-auto px-8">

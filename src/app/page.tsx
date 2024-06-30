@@ -1,3 +1,5 @@
+import ContactMe from "./components/ContactMe";
+import GetInTouch from "./components/GetInTouch";
 import Hero from "./components/Hero";
 import HowIWorked from "./components/HowIWorked";
 import Projects from "./components/Projects";
@@ -6,7 +8,7 @@ import Skills from "./components/Skills";
 
 const page = () => {
   return (
-    <main className=" w-[1290px] h-screen   ">
+    <main className=" w-full h-screen   ">
       {/* <div className="w-1/6 text-white h-screen ">
         <Sidebar />
       </div> */}
@@ -16,6 +18,8 @@ const page = () => {
         <Projects /> 
         <Skills />
         <HowIWorked/>
+        <GetInTouch/>
+        <ContactMe/>
       </div>
       {/* </div> */}
     </main>
