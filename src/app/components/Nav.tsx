@@ -32,7 +32,7 @@ function Navbar({ className }: { className?: string }) {
           <MenuItem  className="" setActive={setActive} active={active} item="Products" />
         </div>
 
-        <div className="flex justify-center items-center text-black">
+        <div className="flex justify-center items-center">
           <HoverBorderGradient
             containerClassName=""
             as="button"
@@ -40,7 +40,7 @@ function Navbar({ className }: { className?: string }) {
           >
             <Link
               href={"/"}
-              className=" text-black bg-slate-400 px-6 py-2 rounded-3xl m-3 "
+              className=" text-black bg-slate-400 px-4 py-2 rounded-3xl m-2 "
             >
               <MenuItem className="text-black" setActive={setActive} active={active} item="Rsume" />
             </Link>
