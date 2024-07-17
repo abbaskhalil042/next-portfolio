@@ -6,6 +6,7 @@ import Projects from "./components/Projects";
 import Sidebar from "./components/Sidebar";
 import Skills from "./components/Skills";
 
+
 const page = () => {
   return (
     <main className=" w-full h-screen   ">

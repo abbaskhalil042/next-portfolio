@@ -21,15 +21,15 @@ function Navbar({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "fixed top-10 flex justify-center items-center  inset-x-0 max-w-2xl mx-auto z-50",
+        "fixed top-10 flex justify-center items-center  inset-x-0 max-w-2xl mx-auto z-50  ",
         className
       )}
     >
       <Menu setActive={setActive}>
         <div className="flex  justify-center items-center gap-6">
-          <MenuItem className="" setActive={setActive} active={active} item="Services" />
+          <MenuItem className="" setActive={setActive} active={active} item="Home" />
 
-          <MenuItem  className="" setActive={setActive} active={active} item="Products" />
+          <MenuItem  className="" setActive={setActive} active={active} item="Projects" />
         </div>
 
         <div className="flex justify-center items-center">
@@ -48,9 +48,8 @@ function Navbar({ className }: { className?: string }) {
         </div>
 
         <div className="flex justify-center items-center gap-6">
-          <MenuItem className="" setActive={setActive} active={active} item="Company" />
-
-          <MenuItem className="" setActive={setActive} active={active} item="Pricing" />
+          <MenuItem className="" setActive={setActive} active={active} item="Contact" />
+          <MenuItem className="" setActive={setActive} active={active} item="Aboutnpm " />
         </div>
       </Menu>
     </div>
