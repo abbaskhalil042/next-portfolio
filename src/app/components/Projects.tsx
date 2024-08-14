@@ -7,14 +7,13 @@ import Link from "next/link";
 import { Sparkle } from "./sparkle";
 import { LampContainer } from "./ui/lamp";
 import { motion } from "framer-motion";
-// "use client";
 
 import { forwardRef, useRef } from "react";
 
 import { cn } from "@/lib/utils";
 import { AnimatedBeam } from "@/components/magicui/animated-beam";
 import { AnimatedTooltip } from "./ui/animated-tooltip";
-
+import projectImage from "../../../public/project-image.jpeg"
 const Circle = forwardRef<
   HTMLDivElement,
   { className?: string; children?: React.ReactNode }
@@ -517,7 +516,7 @@ function Projects() {
               </CardItem>
               <CardItem translateZ="100" className="w-full mt-4">
                 <Image
-                  src={project.imageUrl}
+                  src={projectImage}
                   height="1000"
                   width="1000"
                   className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
