@@ -9,7 +9,7 @@ import Skills from "./components/Skills";
 
 const page = () => {
   return (
-    <main className=" w-full h-screen   ">
+    <main className=" w-full h-screen m-auto  ">
       {/* <div className="w-1/6 text-white h-screen ">
         <Sidebar />
       </div> */}

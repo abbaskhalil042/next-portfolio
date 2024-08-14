@@ -65,6 +65,7 @@ export const MenuItem = ({
 export const Menu = ({
   setActive,
   children,
+  // className,
 
 }: {
   setActive: (item: string | null) => void;
@@ -74,7 +75,7 @@ export const Menu = ({
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className="relative   rounded-full boder border-transparent dark:bg-[#1717269d] dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-4 px-6 py-2 "
+      className="relative rounded-full boder border-transparent  dark:bg-[#1717269d] dark:border-white/[0.2] bg-white shadow-input flex  justify-center space-x-2 px-4 py-2 "
     >
       {children}
     </nav>
@@ -93,7 +94,7 @@ export const ProductItem = ({
   src: string;
 }) => {
   return (
-    <Link href={href} className="flex space-x-2">
+    <Link href={href} className="flex  space-x-2">
       <Image
         src={src}
         width={140}
