@@ -498,7 +498,7 @@ function Projects() {
           Projects
         </motion.h1>
       </LampContainer>
-      <div className="w-fit grid gap-4  grid-cols-1 md:grid-cols-3 grid-rows-2 ">
+      <div className="w-fit grid gap-4 m-auto grid-cols-1 md:grid-cols-3  grid-rows-2 ">
         {projectsImages.map((project, i) => (
           <CardContainer key={i} className="inter-var  w-[100%]">
             <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
