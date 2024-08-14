@@ -543,7 +543,7 @@ function Projects() {
                   {project.live} →
                 </CardItem>
               </div>
-              <div className="flex">
+              <div className="flex mt-2">
                 <AnimatedTooltip items={people} />
               </div>
             </CardBody>
