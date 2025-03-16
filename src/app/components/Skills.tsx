@@ -120,19 +120,15 @@ const slugs = [
 
 function Skills() {
   return (
-
     <>
-  
-  <div>
-  <Sparkle Title="Skills" />
-  </div>
-    <div className="flex justify-around lg:flex-row flex-col h-full w-full items-center">
-      <div className="">
-        <IconCloud iconSlugs={slugs} />
+      <div>
+        <Sparkle Title="Skills" />
       </div>
-    
-    </div>
-
+      <div className="flex justify-around lg:flex-row flex-col h-full w-full items-center">
+        <div className="">
+          <IconCloud iconSlugs={slugs} />
+        </div>
+      </div>
     </>
   );
 }

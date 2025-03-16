@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
 import Link from "next/link";
 import { Sparkle } from "./sparkle";
@@ -13,7 +13,7 @@ import { forwardRef, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { AnimatedBeam } from "@/components/magicui/animated-beam";
 import { AnimatedTooltip } from "./ui/animated-tooltip";
-import projectImage from "../../../public/project-image.jpeg"
+import projectImage from "../../../public/project-image.jpeg";
 const Circle = forwardRef<
   HTMLDivElement,
   { className?: string; children?: React.ReactNode }
@@ -34,8 +34,15 @@ const Circle = forwardRef<
 Circle.displayName = "Circle";
 
 function Projects() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true); // Ensure this runs only on the client
+  }, []);
+
   const projectsImages = [
     {
+      id: 1,
       title: "Compiler for HTML,CSS and JS",
       subtitle: "HTML,CSS and JS compiler",
       imageUrl:
@@ -44,12 +51,22 @@ function Projects() {
       live: "https://coddy-m4o9qsrxu-abbas-team.vercel.app/",
     },
     {
+      id: 2,
       title: "Photext AI",
-      subtitle: "AI powered image to text converter", 
+      subtitle: "AI powered image to text converter",
       imageUrl:
         "https://images.pexels.com/photos/2918152/pexels-photo-2918152.jpeg?auto=compress&cs=tinysrgb&w=600",
       git: "https://github.com/abbaskhalil042/photext-ai",
       live: "https://photext-ai.vercel.app/",
+    },
+    {
+      id: 3,
+      title: "Animated",
+      subtitle: "Animation using GSAP",
+      imageUrl:
+        "https://images.pexels.com/photos/2918152/pexels-photo-2918152.jpeg?auto=compress&cs=tinysrgb&w=600",
+      git: "https://github.com/abbaskhalil042/animation-assignment",
+      live: "https://animation-assignment-phi.vercel.app/",
     },
     // {
     //   title: "Compiler for HTML,CSS and JS",
@@ -59,15 +76,6 @@ function Projects() {
     //   git: "GitHub",
     //   live: "Live",
     // },
-    // {
-    //   title: "Compiler for HTML,CSS and JS",
-    //   subtitle: "HTML,CSS and JS compiler",
-    //   imageUrl:
-    //     "https://images.pexels.com/photos/2918152/pexels-photo-2918152.jpeg?auto=compress&cs=tinysrgb&w=600",
-    //   git: "GitHub",
-    //   live: "Live",
-    // },
-
   ];
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -482,10 +490,10 @@ function Projects() {
           Projects
         </motion.h1>
       </LampContainer>
-      <div className="w-fit grid gap-4 m-auto grid-cols-1 md:grid-cols-3  grid-rows-2 ">
+      <div className="w-fit grid gap-4 mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-auto">
         {projectsImages.map((project, i) => (
-          <CardContainer key={i} className="inter-var  w-[100%]">
-            <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
+          <CardContainer key={i} className="inter-var w-full">
+            <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-6 border">
               <CardItem
                 translateZ="50"
                 className="text-xl font-bold text-neutral-600 dark:text-white"
@@ -508,7 +516,7 @@ function Projects() {
                   alt="thumbnail"
                 />
               </CardItem>
-              <div className="flex justify-between items-center mt-4 ">
+              <div className="flex justify-between items-center mt-4">
                 <CardItem
                   translateZ={20}
                   as={Link}
@@ -516,7 +524,7 @@ function Projects() {
                   target="__blank"
                   className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
                 >
-                 Github
+                  Github
                 </CardItem>
                 <CardItem
                   as={Link}
@@ -524,13 +532,21 @@ function Projects() {
                   translateZ={20}
                   className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
                 >
-                  {/* {project.live} →
-                   */}
-                   Live
+                  Live
                 </CardItem>
               </div>
               <div className="flex mt-2">
-                <AnimatedTooltip items={people} />
+                {isClient && (
+                  <AnimatedTooltip
+                    items={
+                      project.id === 1
+                        ? tech_icon.slice(0, 8)
+                        : project.id === 2
+                        ? tech_icon.slice(1, 5)
+                        : [tech_icon[1], tech_icon[7], tech_icon[8]]
+                    }
+                  />
+                )}
               </div>
             </CardBody>
           </CardContainer>
@@ -541,62 +557,50 @@ function Projects() {
 }
 
 export default Projects;
-
-const people = [
+const tech_icon = [
   {
     id: 1,
     name: "HTML",
-
-    image: "https://img.icons8.com/?size=100&id=20909&format=png&color=000000",
+    image: "https://img.icons8.com/color/96/000000/html-5--v1.png", // Direct link to HTML icon
   },
   {
     id: 2,
-    name: "react.js",
-
-    image:
-      "  https://img.icons8.com/?size=100&id=123603&format=png&color=000000",
+    name: "React.js",
+    image: "https://img.icons8.com/color/96/000000/react-native.png", // Direct link to React icon
   },
   {
     id: 3,
-    name: "node.js",
-
-    image:
-      " https://img.icons8.com/?size=100&id=hsPbhkOH4FMe&format=png&color=000000",
+    name: "Node.js",
+    image: "https://img.icons8.com/color/96/000000/nodejs.png", // Direct link to Node.js icon
   },
   {
     id: 4,
-    name: "express",
-
-    image:
-      " https://img.icons8.com/?size=100&id=SDVmtZ6VBGXt&format=png&color=000000",
+    name: "Express",
+    image: "https://img.icons8.com/color/96/000000/express-js.png", // Direct link to Express icon
   },
   {
     id: 5,
-    name: "mongodb",
-
-    image:
-      " https://img.icons8.com/?size=100&id=74402&format=png&color=000000",
+    name: "MongoDB",
+    image: "https://img.icons8.com/color/96/000000/mongodb.png", // Direct link to MongoDB icon
   },
   {
     id: 6,
-    name: "typescript",
-
-    image:
-      " https://img.icons8.com/?size=100&id=nCj4PvnCO0tZ&format=png&color=000000",
+    name: "TypeScript",
+    image: "https://img.icons8.com/color/96/000000/typescript.png", // Direct link to TypeScript icon
   },
   {
     id: 7,
-    name: "redux",
-
-    image:
-      "https://img.icons8.com/?size=100&id=jD-fJzVguBmw&format=png&color=000000",
+    name: "Redux",
+    image: "https://img.icons8.com/color/96/000000/redux.png", // Direct link to Redux icon
   },
   {
     id: 8,
-    name: "tailwind",
-
-    image:
-      "https://img.icons8.com/?size=100&id=CIAZz2CYc6Kc&format=png&color=000000",
+    name: "Tailwind CSS",
+    image: "https://img.icons8.com/color/96/000000/tailwindcss.png", // Direct link to Tailwind CSS icon
   },
-
+  {
+    id: 9,
+    name: "GSAP",
+    image: "https://img.icons8.com/color/96/000000/gsap.png", // Direct link to GSAP icon
+  },
 ];
