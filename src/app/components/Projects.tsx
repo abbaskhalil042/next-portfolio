@@ -44,8 +44,8 @@ function Projects() {
       live: "https://coddy-m4o9qsrxu-abbas-team.vercel.app/",
     },
     {
-      title: "Compiler for HTML,CSS and JS",
-      subtitle: "HTML,CSS and JS compiler",
+      title: "Photext AI",
+      subtitle: "AI powered image to text converter", 
       imageUrl:
         "https://images.pexels.com/photos/2918152/pexels-photo-2918152.jpeg?auto=compress&cs=tinysrgb&w=600",
       git: "https://github.com/abbaskhalil042/photext-ai",
