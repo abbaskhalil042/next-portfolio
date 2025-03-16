@@ -40,49 +40,34 @@ function Projects() {
       subtitle: "HTML,CSS and JS compiler",
       imageUrl:
         "https://images.pexels.com/photos/2918152/pexels-photo-2918152.jpeg?auto=compress&cs=tinysrgb&w=600",
-      git: "GitHub",
-      live: "Live",
+      git: "https://github.com/abbaskhalil042/coddy-editor",
+      live: "https://coddy-m4o9qsrxu-abbas-team.vercel.app/",
     },
     {
       title: "Compiler for HTML,CSS and JS",
       subtitle: "HTML,CSS and JS compiler",
       imageUrl:
         "https://images.pexels.com/photos/2918152/pexels-photo-2918152.jpeg?auto=compress&cs=tinysrgb&w=600",
-      git: "GitHub",
-      live: "Live",
+      git: "https://github.com/abbaskhalil042/photext-ai",
+      live: "https://photext-ai.vercel.app/",
     },
-    {
-      title: "Compiler for HTML,CSS and JS",
-      subtitle: "HTML,CSS and JS compiler",
-      imageUrl:
-        "https://images.pexels.com/photos/2918152/pexels-photo-2918152.jpeg?auto=compress&cs=tinysrgb&w=600",
-      git: "GitHub",
-      live: "Live",
-    },
-    {
-      title: "Compiler for HTML,CSS and JS",
-      subtitle: "HTML,CSS and JS compiler",
-      imageUrl:
-        "https://images.pexels.com/photos/2918152/pexels-photo-2918152.jpeg?auto=compress&cs=tinysrgb&w=600",
-      git: "GitHub",
-      live: "Live",
-    },
-    {
-      title: "Compiler for HTML,CSS and JS",
-      subtitle: "HTML,CSS and JS compiler",
-      imageUrl:
-        "https://images.pexels.com/photos/2918152/pexels-photo-2918152.jpeg?auto=compress&cs=tinysrgb&w=600",
-      git: "GitHub",
-      live: "Live",
-    },
-    {
-      title: "Compiler for HTML,CSS and JS",
-      subtitle: "HTML,CSS and JS compiler",
-      imageUrl:
-        "https://images.pexels.com/photos/2918152/pexels-photo-2918152.jpeg?auto=compress&cs=tinysrgb&w=600",
-      git: "GitHub",
-      live: "Live",
-    },
+    // {
+    //   title: "Compiler for HTML,CSS and JS",
+    //   subtitle: "HTML,CSS and JS compiler",
+    //   imageUrl:
+    //     "https://images.pexels.com/photos/2918152/pexels-photo-2918152.jpeg?auto=compress&cs=tinysrgb&w=600",
+    //   git: "GitHub",
+    //   live: "Live",
+    // },
+    // {
+    //   title: "Compiler for HTML,CSS and JS",
+    //   subtitle: "HTML,CSS and JS compiler",
+    //   imageUrl:
+    //     "https://images.pexels.com/photos/2918152/pexels-photo-2918152.jpeg?auto=compress&cs=tinysrgb&w=600",
+    //   git: "GitHub",
+    //   live: "Live",
+    // },
+
   ];
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -531,7 +516,7 @@ function Projects() {
                   target="__blank"
                   className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
                 >
-                  {project.git} →
+                 Github
                 </CardItem>
                 <CardItem
                   as={Link}
@@ -539,7 +524,9 @@ function Projects() {
                   translateZ={20}
                   className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
                 >
-                  {project.live} →
+                  {/* {project.live} →
+                   */}
+                   Live
                 </CardItem>
               </div>
               <div className="flex mt-2">
