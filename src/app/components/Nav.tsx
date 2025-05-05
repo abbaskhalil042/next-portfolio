@@ -1,11 +1,21 @@
 "use client";
 import React, { useState } from "react";
+
+import {
+  IconBrandGithub,
+  IconBrandX,
+  IconExchange,
+  IconHome,
+  IconNewSection,
+  IconTerminal2,
+} from "@tabler/icons-react";
 // import { HoveredLink, Menu, MenuItem, ProductItem } from "../ui/navbar-menu";
 import { cn } from "../utils/cn";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "./ui/navbar-menu";
 import Link from "next/link";
 import { HoverBorderGradient } from "./ui/hover-border-gradient";
 import Image from "next/image";
+import { FloatingDock } from "./ui/floating-dock";
 // import { cn } from "@app/utils/cn";
 // import resume from "../../../public/my-resume.pdf"
 
@@ -19,45 +29,52 @@ export function NavbarDemo() {
 
 function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
-  return (
+  const links = [
+    {
+      title: "Home",
+      icon: (
+        <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "#",
+    },
 
-    
-    <div
-      className={cn(
-        "fixed top-10 flex  justify-center items-center sm:w-[10rem] inset-x-0 max-w-2xl mx-auto z-50  ",
-        className
-      )}
-    >
-
-      <Menu setActive={setActive}>
+    {
+      title: "Products",
+      icon: (
+        <IconTerminal2 className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "#",
+    },
+    {
+      title: "Components",
+      icon: (
+        <IconNewSection className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "#",
+    },
   
-        <div className="flex  justify-center items-center gap-6">
-          <MenuItem className="" setActive={setActive} active={active} item="Home" />
 
-          <MenuItem  className="" setActive={setActive} active={active} item="Projects" />
-        </div>
-
-        <div className="flex justify-center items-center">
-          <HoverBorderGradient
-            containerClassName=""
-            as="button"
-            className="dark:bg-black  text-black dark:text-white flex flex-col items-center space-x-2"
-          >
-            <Link
-              href={"/my-resume.pdf"}
-              className=" text-black bg-slate-400 px-4 py-2 rounded-3xl m-2 "
-              download
-            >
-              <MenuItem className="text-black" setActive={setActive} active={active} item="Rsume" />
-            </Link>
-          </HoverBorderGradient>
-        </div>
-
-        <div className="flex justify-center items-center gap-6">
-          <MenuItem className="" setActive={setActive} active={active} item="Contact" />
-          <MenuItem className="" setActive={setActive} active={active} item="About " />
-        </div>
-      </Menu>
+    {
+      title: "Twitter",
+      icon: (
+        <IconBrandX className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "#",
+    },
+    {
+      title: "GitHub",
+      icon: (
+        <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "#",
+    },
+  ];
+  return (
+    <div className="flex items-center justify-center fixed Lg:fixed w-full lg:bottom-4 bottom-10 ">
+      <FloatingDock
+        mobileClassName="translate-y-10" // only for demo, remove for production
+        items={links}
+      />
     </div>
   );
 }
