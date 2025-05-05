@@ -8,6 +8,7 @@ import {
   useSpring,
   useTransform,
 } from "motion/react";
+import Link from "next/link";
 
 import { useRef, useState } from "react";
 
@@ -16,7 +17,7 @@ export const FloatingDock = ({
   desktopClassName,
   mobileClassName,
 }: {
-  items: { title: string; icon: React.ReactNode; href: string }[];
+  items: { title: string; icon: React.ReactNode; to: string }[];
   desktopClassName?: string;
   mobileClassName?: string;
 }) => {
@@ -32,7 +33,7 @@ const FloatingDockMobile = ({
   items,
   className,
 }: {
-  items: { title: string; icon: React.ReactNode; href: string }[];
+  items: { title: string; icon: React.ReactNode; to: string }[];
   className?: string;
 }) => {
   let mouseX = useMotionValue(Infinity);
@@ -52,7 +53,7 @@ const FloatingDockMobile = ({
             onMouseLeave={() => mouseX.set(Infinity)}
           >
             {items.map((item) => (
-              <IconContainer mouseX={mouseX} key={item.title} {...item} />
+              <IconContainer  mouseX={mouseX} key={item.title} {...item} />
             ))}
           </motion.div>
         </motion.div>
@@ -65,7 +66,7 @@ const FloatingDockDesktop = ({
   items,
   className,
 }: {
-  items: { title: string; icon: React.ReactNode; href: string }[];
+  items: { title: string; icon: React.ReactNode; to: string }[];
   className?: string;
 }) => {
   let mouseX = useMotionValue(Infinity);
@@ -79,7 +80,7 @@ const FloatingDockDesktop = ({
       )}
     >
       {items.map((item) => (
-        <IconContainer mouseX={mouseX} key={item.title} {...item} />
+        <IconContainer  mouseX={mouseX} key={item.title} {...item} />
       ))}
     </motion.div>
   );
@@ -89,12 +90,12 @@ function IconContainer({
   mouseX,
   title,
   icon,
-  href,
+  to,
 }: {
   mouseX: MotionValue;
   title: string;
   icon: React.ReactNode;
-  href: string;
+  to: string;
 }) {
   let ref = useRef<HTMLDivElement>(null);
 
@@ -139,7 +140,7 @@ function IconContainer({
   const [hovered, setHovered] = useState(false);
 
   return (
-    <a href={href}>
+    <Link href={to}>
       <motion.div
         ref={ref}
         style={{ width, height }}
@@ -166,6 +167,6 @@ function IconContainer({
           {icon}
         </motion.div>
       </motion.div>
-    </a>
+    </Link>
   );
 }

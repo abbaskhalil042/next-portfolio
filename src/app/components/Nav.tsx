@@ -21,7 +21,7 @@ import { FloatingDock } from "./ui/floating-dock";
 
 export function NavbarDemo() {
   return (
-    <div className="relative w-full flex items-center justify-center ">
+    <div className="relative w-full flex items-center z-10 justify-center ">
       <Navbar className="top-2" />
     </div>
   );
@@ -35,22 +35,22 @@ function Navbar({ className }: { className?: string }) {
       icon: (
         <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      to: "/",
     },
 
+    // {
+    //   title: "Products",
+    //   icon: (
+    //     <IconTerminal2 className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+    //   ),
+    //   href: "#",
+    // },
     {
-      title: "Products",
+      title: "Skills",
       icon: (
-        <IconTerminal2 className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+        <svg className="mb-0.5 opacity-100" height="18px" width="18px" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"><g fill="#737373"><path d="M15.183 2.74329C8.17788 3.2182 4.68522 8.77876 3.81453 11.4997C4.49946 12.0114 6.58006 12.9064 9.42299 12.3924C12.2659 11.8784 12.9751 9.74808 12.9743 8.74715C15.1281 7.42278 14.0847 5.37604 15.183 2.74329Z" fill="#737373" fill-opacity="0.3" stroke="none"></path><path d="M12.974 8.731C12.5 12.422 9.25 12.844 6 12.25" fill="none" stroke="#737373" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path><path d="M2.75 15.25C2.75 15.25 4.062 3.729 15.25 2.75C14.69 3.726 14.677 5.355 14.304 6.989C13.78 9 11.969 9.25 9.75 9.25" fill="none" stroke="#737373" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path></g></svg>
       ),
-      href: "#",
-    },
-    {
-      title: "Components",
-      icon: (
-        <IconNewSection className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-      ),
-      href: "#",
+      to: "/skills",
     },
   
 
@@ -59,14 +59,14 @@ function Navbar({ className }: { className?: string }) {
       icon: (
         <IconBrandX className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      to: "/https://x.com/abbas_042",
     },
     {
       title: "GitHub",
       icon: (
         <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      to: "/https://github.com/abbaskhalil042",
     },
   ];
   return (
