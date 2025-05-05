@@ -476,24 +476,29 @@ function Projects() {
         <Sparkle Title="Projects" />
       </div> */}
 
-      <LampContainer>
+      <LampContainer className=" lg:mb-[-15rem] mb-[-18rem]">
         <motion.h1
-          initial={{ opacity: 0.5, y: 100 }}
+          initial={{ opacity: 0.5, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{
             delay: 0.3,
             duration: 0.8,
             ease: "easeInOut",
           }}
-          className="mt-8 bg-gradient-to-br from-slate-300 to-slate-500 py-2 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
+          className="mt-8 text-white py-2 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
         >
           Projects
         </motion.h1>
       </LampContainer>
-      <div className="w-fit grid gap-4 mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-auto">
+      <div className="w-fit grid gap-4 mx-auto  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-auto">
         {projectsImages.map((project, i) => (
-          <CardContainer key={i} className="inter-var w-full">
-            <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-6 border">
+          <CardContainer
+            key={i}
+            className={`inter-var w-full lg:mb-[6rem] ${
+              i === projectsImages.length - 1 ? "mb-[6rem]" : ""
+            }`}
+          >
+            <CardBody className="bg-gray-50  relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-6 border">
               <CardItem
                 translateZ="50"
                 className="text-xl font-bold text-neutral-600 dark:text-white"

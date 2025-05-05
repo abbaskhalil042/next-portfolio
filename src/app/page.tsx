@@ -17,10 +17,10 @@ const page = () => {
       <div>
         <Hero />
         <Projects /> 
-        <Skills />
+        {/* <Skills /> */}
         {/* <HowIWorked/> */}
-        <GetInTouch/>
-        <ContactMe/>
+        {/* <GetInTouch/> */}
+        {/* <ContactMe/> */}
       </div>
       {/* </div> */}
     </main>

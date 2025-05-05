@@ -45,7 +45,7 @@ const FloatingDockMobile = ({
         >
           <motion.div
             className={cn(
-                "flex h-16 items-end gap-2 mb-10 rounded-2xl z-40 bg-gray-50 p-2 dark:bg-white",
+                "flex h-14 items-end gap-2 mb-10 rounded-2xl z-40 bg-gray-50 p-2 dark:bg-white",
                 className
               )}
             onMouseMove={(e) => mouseX.set(e.pageX)}
