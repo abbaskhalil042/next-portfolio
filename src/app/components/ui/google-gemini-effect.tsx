@@ -34,10 +34,15 @@ export const GoogleGeminiEffect = ({
   ];
   return (
     <div className={cn("sticky top-40", className)}>
-
       <Vortex>
         <p className="text-3xl md:text-7xl font-normal pb-4 text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-300">
-          {/* <span className="border-b-2 border-b-blue-500"> <h1 className="text-3xl text-white font-extrabold rounded-2xl bg-purple-400">still working upon it   </h1><br /> Build</span> */}
+          <span className="border-b-2 border-b-blue-500">
+            {" "}
+            <h1 className="text-3xl text-white font-extrabold rounded-2xl bg-purple-400">
+              still working on it{" "}
+            </h1>
+            <br /> Build
+          </span>
           <FlipWords words={words} /> <br />
         </p>
         <p className="text-xs md:text-xl font-normal text-center text-neutral-400  max-w-lg mx-auto">
@@ -57,7 +62,13 @@ export const GoogleGeminiEffect = ({
           >
             {/* <AceternityLogo /> */}
             <div>
-              <Image className="rounded-full" src={portfolio} width={90} height={120} alt="" />
+              <Image
+                className="rounded-full"
+                src={portfolio}
+                width={90}
+                height={120}
+                alt=""
+              />
             </div>
             <div>Hire me</div>
           </HoverBorderGradient>
