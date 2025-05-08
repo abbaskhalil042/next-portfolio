@@ -7,7 +7,7 @@ import Link from "next/link";
 import { Sparkle } from "./sparkle";
 import { LampContainer } from "./ui/lamp";
 import { motion } from "framer-motion";
-
+import photext from "../../../public/photext-image.jpg"
 import { forwardRef, useRef } from "react";
 
 import { cn } from "@/lib/utils";
@@ -54,8 +54,7 @@ function Projects() {
       id: 2,
       title: "Photext AI",
       subtitle: "AI powered image to text converter",
-      imageUrl:
-        "https://images.pexels.com/photos/2918152/pexels-photo-2918152.jpeg?auto=compress&cs=tinysrgb&w=600",
+      imageUrl:photext,
       git: "https://github.com/abbaskhalil042/photext-ai",
       live: "https://photext-ai.vercel.app/",
     },
@@ -68,14 +67,7 @@ function Projects() {
       git: "https://github.com/abbaskhalil042/animation-assignment",
       live: "https://animation-assignment-phi.vercel.app/",
     },
-    // {
-    //   title: "Compiler for HTML,CSS and JS",
-    //   subtitle: "HTML,CSS and JS compiler",
-    //   imageUrl:
-    //     "https://images.pexels.com/photos/2918152/pexels-photo-2918152.jpeg?auto=compress&cs=tinysrgb&w=600",
-    //   git: "GitHub",
-    //   live: "Live",
-    // },
+
   ];
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -514,7 +506,7 @@ function Projects() {
               </CardItem>
               <CardItem translateZ="100" className="w-full mt-4">
                 <Image
-                  src={projectImage}
+                  src={project.imageUrl}
                   height="1000"
                   width="1000"
                   className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
