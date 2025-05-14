@@ -35,17 +35,17 @@ export const GoogleGeminiEffect = ({
   return (
     <div className={cn("sticky top-40", className)}>
       <Vortex>
-        <p className="text-3xl md:text-7xl font-normal pb-4 text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-300">
+        <h1 className="text-3xl lg:mb-[-4rem] mb-[-2.3rem] text-white text-center font-extrabold rounded-2xl bg-purple-400">
+          still working on it{" "}
+        </h1>
+        <p className="text-3xl md:text-7xl font-normal pb-3 space-y-[-28rem] lg:pb-[-10] text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-300">
           <span className="border-b-2 border-b-blue-500">
-            {" "}
-            <h1 className="text-3xl text-white font-extrabold rounded-2xl bg-purple-400">
-              still working on it{" "}
-            </h1>
             <br /> Build
           </span>
           <FlipWords words={words} /> <br />
         </p>
-        <p className="text-xs md:text-xl font-normal text-center text-neutral-400  max-w-lg mx-auto">
+
+        <p className="text-xs md:text-xl  font-normal text-center text-neutral-400  max-w-lg mx-auto">
           {description ||
             `  "Craft dynamic websites and Android apps using cutting-edge tech and innovative design for seamless, user-centric experiences."`}
         </p>
