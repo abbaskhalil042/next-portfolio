@@ -4,16 +4,17 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
 import Link from "next/link";
-import { Sparkle } from "./sparkle";
+
 import { LampContainer } from "./ui/lamp";
 import { motion } from "framer-motion";
-import photext from "../../../public/photext-image.jpg"
+import photext from "../../../public/photext-image.jpg";
 import { forwardRef, useRef } from "react";
 
 import { cn } from "@/lib/utils";
-import { AnimatedBeam } from "@/components/magicui/animated-beam";
+
 import { AnimatedTooltip } from "./ui/animated-tooltip";
-import projectImage from "../../../public/project-image.jpeg";
+
+import briefly from "../../../public/pdf-summary.png";
 const Circle = forwardRef<
   HTMLDivElement,
   { className?: string; children?: React.ReactNode }
@@ -54,20 +55,18 @@ function Projects() {
       id: 2,
       title: "Photext AI",
       subtitle: "AI powered image to text converter",
-      imageUrl:photext,
+      imageUrl: photext,
       git: "https://github.com/abbaskhalil042/photext-ai",
       live: "https://photext-ai.vercel.app/",
     },
     {
       id: 3,
-      title: "Animated",
+      title: "Briefly PDF Summarizer",
       subtitle: "Animation using GSAP",
-      imageUrl:
-        "https://images.pexels.com/photos/2918152/pexels-photo-2918152.jpeg?auto=compress&cs=tinysrgb&w=600",
-      git: "https://github.com/abbaskhalil042/animation-assignment",
-      live: "https://animation-assignment-phi.vercel.app/",
+      imageUrl: briefly,
+      git: "https://github.com/abbaskhalil042/briefly",
+      live: "https://briefly-beryl.vercel.app/",
     },
-
   ];
 
   const containerRef = useRef<HTMLDivElement>(null);
